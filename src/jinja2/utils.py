@@ -579,7 +579,7 @@ class LRUCache:
 
 
 def select_autoescape(
-    enabled_extensions: t.Collection[str] = ("html", "htm", "xml"),
+    enabled_extensions: t.Collection[str] = ("html", "htm", "xml", "xhtml", "svg"),
     disabled_extensions: t.Collection[str] = (),
     default_for_string: bool = True,
     default: bool = False,
@@ -615,6 +615,11 @@ def select_autoescape(
     value of `default`.
 
     For security reasons this function operates case insensitive.
+
+    .. versionchanged:: 3.2
+        ``.xhtml`` and ``.svg`` are enabled by default. Both are active content
+        that browsers may execute scripts in, so they need the same escaping
+        as HTML.
 
     .. versionadded:: 2.9
     """

@@ -5,6 +5,9 @@ Version 3.2.0
 
 Unreleased
 
+-   ``select_autoescape`` enables autoescaping for ``.xhtml`` and ``.svg``
+    templates by default. Both are active content that browsers may execute
+    scripts in, so they need the same escaping as HTML.
 -   Drop support for Python 3.7, 3.8, and 3.9.
 -   Update minimum MarkupSafe version to >= 3.0.
 -   Update minimum Babel version to >= 2.17.
